@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Github Follower Checker",
+  "description": "You can see the users who don't follow you on the followers page",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "css": ["assets/style.css"],
+      "js": ["assets/script.js"]
+    }
+  ],
+  "permissions": [ "activeTab", "<all_urls>", "background" ],
+  "background": {
+    "persistent": false,
+    "scripts": [ "assets/background.js" ]
+  },
+  "browser_action": {
+    "default_icon": "image.png",
+    "default_popup": "popup.html",
+    "default_title": "Github Follower Checker"
+  }
+}
